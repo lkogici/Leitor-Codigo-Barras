@@ -1,1 +1,17 @@
 <ion-nav [root]="rootPage"></ion-nav>
+
+<ion-content padding>
+  <div>
+    <ion-input style="background-color: gray" type="text" [(ngModel)]="encodeText"></ion-input>
+    <button ion-button block (click)="encode()">Encode</button>
+  </div>
+
+  <div>
+    <button ion-button block (click)="scan()">Scan</button>
+    <div *ngIf="scanedData.text">
+        <label>Your barcode is: </label>
+        <br>
+        <span>{{ scanedData.text }}</span>
+    </div>
+  </div>
+</ion-content>
